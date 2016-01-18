@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/Jama-1.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="lib/mongo-2.7.3.jar"/>
+	<classpathentry kind="lib" path="lib/morphia-0.99.jar"/>
+	<classpathentry kind="lib" path="lib/morphia-logging-slf4j-0.99.jar"/>
+	<classpathentry kind="lib" path="lib/OzoneAddEngine.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/mahout-core-0.7-job.jar"/>
+	<classpathentry kind="lib" path="lib/mahout-core-0.7.jar"/>
+	<classpathentry kind="lib" path="lib/mahout-integration-0.7.jar"/>
+	<classpathentry kind="lib" path="lib/mahout-math-0.7.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

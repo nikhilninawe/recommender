@@ -1,0 +1,47 @@
+
+<project name="${app.name}" basedir="." default="archive">
+	
+	<description>
+		Recommendation System
+	</description>
+
+	<property file="build.properties" />
+
+	<target name="clean">
+		<delete dir="${dist.home}" />
+		<delete dir="${build.home}" />
+		<delete dir="${bin.home}" />	
+	</target>
+	
+	<target name="init" depends="clean" description="Create build directory">
+		<mkdir dir="${build.home}" />
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac srcdir="${src.home}" destdir="${build.home}" debug="${compile.debug}" deprecation="${compile.deprecation}" optimize="${compile.optimize}" source="1.6" target="1.6">
+			<classpath>
+				<path>
+					<fileset dir="${lib.home}" />
+				</path>
+			</classpath>
+		</javac>	
+	</target>
+	
+	<target name="build" depends="compile" description="Copies all non Java classes to build directoy">
+	</target>
+	
+	<target name="archive" depends="build" description="Make Application Jar in dist">
+		<mkdir dir="${dist.home}" />
+		<jar jarfile="${dist.home}/${app.name}.jar" basedir="${build.home}" manifest="${manifest.home}/MANIFEST.MF" />
+		<!-- copy all the jar files -->
+		<copy todir="${dist.home}">
+			<fileset dir="${lib.home}" excludes="CVS,**/*.classes" />
+		</copy>
+		 <!-- copy config/* files into dist/config/*-->
+		<copy todir="${dist.home}/config">
+			<fileset dir="${config.home}" includes="*" />
+		</copy>
+				
+
+	</target>
+</project>
